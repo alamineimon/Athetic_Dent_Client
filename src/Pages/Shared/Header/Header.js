@@ -38,7 +38,14 @@ const Header = (props) => {
             </ul>
           </div>
           <Link to="/">
-            <p className="text-4xl font-semibold ">Incredible Trip</p>
+            <div className='flex'>
+              <img
+                src="https://www.creativefabrica.com/wp-content/uploads/2021/03/20/Travel-logo-design-Graphics-9786083-1.jpg"
+                alt=""
+                className="h-20"
+              />
+              <p className="text-4xl mt-4 font-semibold">Incredible Trip</p>
+            </div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -48,17 +55,31 @@ const Header = (props) => {
                 <a>Home</a>
               </li>
             </Link>
-            <li tabIndex={0}>
-              <a>Services</a>
+            <Link to="/servces">
+              <li tabIndex={0}>
+                <a>Services</a>
+              </li>
+            </Link>
+
+            <li>
+              <a>About</a>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>Contact</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end ">
-          <button className="btn btn-info mr-6 text-white">Register</button>
-          <button className="btn btn-outline btn-info hove:text-white ">Login</button>
+          <Link to="/register">
+            <button className="btn btn-info mr-4 rounded text-white">
+              Register
+            </button>
+          </Link>
+          <Link to="/login">
+            <button className="btn btn-outline btn-info rounded hove:text-white ">
+              Login
+            </button>
+          </Link>
         </div>
       </div>
     );
