@@ -6,8 +6,6 @@ import { AuthContext } from "../../Contexts/AuthPovider/AuthProvider";
 
 
 
-const auth = getAuth(app);
-
 
 const Register = (props) => {
 
@@ -25,7 +23,7 @@ const Register = (props) => {
     const name = form.username.value;
     const password = form.password.value;
     const photo_url = form.photo_url.value;
-      console.log(email, name, password, photo_url);
+    console.log(email, name, password, photo_url);
 
     createUser(email, password)
       .then((result) => {

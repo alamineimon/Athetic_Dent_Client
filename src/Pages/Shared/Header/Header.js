@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/AuthPovider/AuthProvider';
 
-const Header = (props) => {
+const Header = () => {
+
+
+  const { user, logOut, setUser } = useContext(AuthContext)
+  const handelLogOut = () => {
+    logOut()
+      .then(() => {
+        setUser({});
+      })
+      .catch((error) => console.error(error));
+  };
+
     return (
       <div className="navbar bg-white px-8  text-black">
         <div className="navbar-start">
@@ -38,7 +50,7 @@ const Header = (props) => {
             </ul>
           </div>
           <Link to="/">
-            <div className='flex'>
+            <div className="flex">
               <img
                 src="https://www.creativefabrica.com/wp-content/uploads/2021/03/20/Travel-logo-design-Graphics-9786083-1.jpg"
                 alt=""
@@ -70,16 +82,29 @@ const Header = (props) => {
           </ul>
         </div>
         <div className="navbar-end ">
-          <Link to="/register">
-            <button className="btn btn-info mr-4 rounded text-white">
-              Register
-            </button>
-          </Link>
-          <Link to="/login">
-            <button className="btn btn-outline btn-info rounded hove:text-white ">
-              Login
-            </button>
-          </Link>
+          {user?.uid ? (
+            <Link to="/login">
+              <button
+                onClick={handelLogOut}
+                className="btn btn-info mr-4 rounded text-white"
+              >
+                Logout
+              </button>
+            </Link>
+          ) : (
+            <div>
+              <Link to="/register">
+                <button className="btn btn-info mr-4 rounded text-white">
+                  Register
+                </button>
+              </Link>
+              <Link to="/login">
+                <button className="btn btn-outline btn-info rounded hove:text-white ">
+                  Login
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     );
