@@ -41,7 +41,11 @@ const MyReviewRow = ({ rev, handleDelete }) => {
                 />
               </svg>
             </button>
-            <button className="btn mt-2 btn-ghost bg-none rounded-lg">Edit</button>
+            <Link to="/updatereview">
+              <button className="btn mt-2 btn-ghost bg-none rounded-lg">
+                Edit
+              </button>
+            </Link>
           </div>
         </div>
         <div className="p-4 space-y-2 text-sm dark:text-gray-400">

@@ -6,7 +6,7 @@ const Blogs = (props) => {
       <section className=" ">
         <div className="container my-12  flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
           <h2 className="text-2xl py-4 mb-20 text-center font-semibold sm:text-4xl">
-            Frequently Asked Questions
+            Important Interview Quesstion (Blogs)
           </h2>
           <div className="space-y-4 w-3/4 mx-auto">
             <details className="w-full border rounded-lg">
