@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Contexts/AuthPovider/AuthProvider';
 
@@ -121,19 +121,35 @@ const TakeReview = () => {
                   className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
                 />
               </div>
-              <div className="space-y-1 text-sm">
-                <textarea
-                  className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
-                  name="text"
-                  id="text"
-                  cols="30"
-                  rows="10"
-                  placeholder="Please Input Your Feedback"
-                ></textarea>
-              </div>
-              <button className="block w-full p-3 text-center btn  btn-info rounded text-white">
-                Give Review
-              </button>
+              {user?.uid ? (
+                <div className="space-y-1 text-sm">
+                  <textarea
+                    className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400"
+                    name="text"
+                    id="text"
+                    cols="30"
+                    rows="10"
+                    placeholder="Please Input Your Feedback"
+                  ></textarea>
+                </div>
+              ) : (
+                <div className="rounded-md dark:border-gray-700 h-20 text-center my-12 dark:bg-gray-800 dark:text-gray-100 focus:dark:border-violet-400">
+                  <p>You can't enter any message</p>
+                </div>
+              )}
+              {user?.uid ? (
+                <button className="block w-full p-3 text-center btn  btn-info rounded text-white">
+                  Give Review
+                </button>
+              ) : (
+                <Link to="/login">
+                  <div className='mt-6'>
+                    <h1 className="btn  btn-info rounded text-white">
+                      Please login before submit a review
+                    </h1>
+                  </div>
+                </Link>
+              )}
             </form>
           </div>
         </div>

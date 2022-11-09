@@ -1,6 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../Contexts/AuthPovider/AuthProvider';
 
 
@@ -26,6 +27,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         setUser(user);
+        Swal.fire("Success");
         navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
@@ -41,6 +43,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         setUser(user);
+        Swal.fire("Success");
         navigate(from, { replace: true });
       })
       .then((error) => console.error(error));
@@ -60,6 +63,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         setUser(user);
+        Swal.fire("Success");
         form.reset();
         setError("");
         navigate(from, { replace: true });
