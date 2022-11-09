@@ -1,7 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
-import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../Contexts/AuthPovider/AuthProvider";
 
 
@@ -9,7 +7,7 @@ import { AuthContext } from "../../Contexts/AuthPovider/AuthProvider";
 
 const Register = (props) => {
 
-    const { createUser, providerLogin, updateUserProfile, setUser } =
+    const { createUser,  updateUserProfile } =
     useContext(AuthContext);
   
   const { error, setError } = useState();

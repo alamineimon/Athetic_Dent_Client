@@ -52,11 +52,11 @@ const Header = () => {
           <Link to="/">
             <div className="flex">
               <img
-                src="https://www.creativefabrica.com/wp-content/uploads/2021/03/20/Travel-logo-design-Graphics-9786083-1.jpg"
+                src="https://st2.depositphotos.com/1768926/9860/v/600/depositphotos_98600482-stock-illustration-dental-care-logo.jpg"
                 alt=""
                 className="h-20"
               />
-              <p className="text-4xl mt-4 font-semibold">Incredible Trip</p>
+              <p className="text-4xl mt-4 font-semibold">Athetic Dent</p>
             </div>
           </Link>
         </div>
@@ -67,18 +67,28 @@ const Header = () => {
                 <a>Home</a>
               </li>
             </Link>
-            <Link to="/servces">
+            <Link to="/services">
               <li tabIndex={0}>
                 <a>Services</a>
               </li>
             </Link>
-
-            <li>
-              <a>About</a>
-            </li>
-            <li>
-              <a>Contact</a>
-            </li>
+            {user?.uid ? (
+              <>
+                <li className="mr-2">
+                  <Link>My review</Link>
+                </li>
+                <li>
+                  <Link>Add Service</Link>
+                </li>
+              </>
+            ) : (
+              <></>
+            )}
+            <Link to="/blogs">
+              <li tabIndex={0}>
+                <a>Blogs</a>
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="navbar-end ">

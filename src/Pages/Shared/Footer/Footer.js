@@ -5,12 +5,12 @@ const Footer = (props) => {
       <footer className="footer p-10 text-white  bg-black">
         <div>
           <img
-            src="https://www.creativefabrica.com/wp-content/uploads/2021/03/20/Travel-logo-design-Graphics-9786083-1.jpg"
+            src="https://st2.depositphotos.com/1768926/9860/v/600/depositphotos_98600482-stock-illustration-dental-care-logo.jpg"
             alt=""
             className="h-16 md:rounded-lg"
           />
           <p>
-            Imcrdible Trip Ltd.
+            Athetic Dent.
             <br />
             Providing reliable tech since 1992
           </p>
