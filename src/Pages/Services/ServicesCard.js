@@ -13,11 +13,11 @@ const ServicesCard = ({service}) => {
         <div className="card-body">
           <h2 className="card-title font-semibold ">{name}</h2>
           <h1 className="text-3xl font-semibold ">Provider: {seller}</h1>
-          <p>Price: {price}</p>
+          <p className="text-2xl text-orange-600">Price: {price}</p>
           <p>{describes}</p>
           <div className="card-actions justify-end">
-            <Link to={`checkout/${_id}`}>
-            <button className="btn rounded-lg btn-primary">See More</button>
+            <Link to={`/services/${_id}`}>
+              <button className="btn btn-primary rounded">See More</button>
             </Link>
           </div>
         </div>
