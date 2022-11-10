@@ -1,15 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthPovider/AuthProvider';
 import ServicesCard from './ServicesCard';
 
 const Services = (props) => {
-    const [services, setServices] = useState([]);
+   const { loading, setUser } = useContext(AuthContext);
+  const [services, setServices] = useState([]);
+  
 
     useEffect(() => {
       fetch("http://localhost:5000/services")
         .then((res) => res.json())
-        .then((data) => setServices(data));
-    }, []);
+        .then((data) => {
+          if (loading) {
+            return (
+              <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-900"></div>
+            );
+          } else {
+            setServices(data);
+          }
+        });
+    }, [setServices,loading]);
     return (
       <div className='py-8'>
         <div className="grid gap-2 p-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

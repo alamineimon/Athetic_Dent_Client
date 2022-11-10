@@ -1,6 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Contexts/AuthPovider/AuthProvider';
 
@@ -10,13 +10,8 @@ const Login = () => {
   const { signIn, auth, setUser } = useContext(AuthContext);
   const [error, setError] = useState();
 
-  const navigate = useNavigate();
 
-  const location = useLocation();
-
-  const from = location.state?.from?.pathname || "/";
-
-  const { providerLogin } = useContext(AuthContext);
+  const { providerLogin, loading } = useContext(AuthContext);
 
   //  google  login
   const googleProvider = new GoogleAuthProvider();
@@ -26,9 +21,14 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        setUser(user);
+        if (loading) {
+          return (
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-900"></div>
+          );
+        } else {
+          setUser(user);
+        }
         Swal.fire("Success");
-        navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
   };
@@ -42,9 +42,14 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        setUser(user);
+        if (loading) {
+          return (
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-900"></div>
+          );
+        } else {
+          setUser(user);
+        }
         Swal.fire("Success");
-        navigate(from, { replace: true });
       })
       .then((error) => console.error(error));
   };
@@ -62,11 +67,16 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        setUser(user);
+        if (loading) {
+          return (
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-900"></div>
+          );
+        } else {
+          setUser(user);
+        }
         Swal.fire("Success");
         process.form.reset();
         setError("");
-        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);

@@ -7,7 +7,7 @@ import { AuthContext } from "../../Contexts/AuthPovider/AuthProvider";
 
 const Register = (props) => {
 
-    const { createUser,  updateUserProfile } =
+    const { createUser,loading, setUser, updateUserProfile } =
     useContext(AuthContext);
   
   const { error, setError } = useState();
@@ -26,7 +26,13 @@ const Register = (props) => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        if (loading) {
+          return (
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-900"></div>
+          );
+        } else {
+          setUser(user);
+        }
         handleUpdateUserProfile(name, photo_url);
         setError("");
         form.reset();
