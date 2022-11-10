@@ -6,15 +6,16 @@ const AllReview = (props) => {
     const { reviews, setReviews } = useState([]);
     console.log(reviews);
 
-    // useEffect(() => {
-    //   fetch("http://localhost:5000/allreview")
-    //     .then((res) => res.json())
-    //         .then((data) => console.log(data));
+    useEffect(() => {
+        document.title='All Review'
+      fetch("http://localhost:5000/allreview")
+        .then((res) => res.json())
+            .then((data) => console.log(data));
         
-    // },[]);
+    },[]);
     return (
         <div>
-            {/* <h1>all review:{reviews.length} </h1> */}
+            <h1>all review:{reviews.length} </h1>
         </div>
     );
 }

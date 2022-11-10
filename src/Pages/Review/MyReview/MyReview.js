@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../Contexts/AuthPovider/AuthProvider';
 import MyReviewRow from './MyRevieRow/MyReviewRow';
@@ -7,6 +6,7 @@ import MyReviewRow from './MyRevieRow/MyReviewRow';
 const MyReview = (props) => {
   const { user } = useContext(AuthContext);
   const [review, setReview] = useState([]);
+  console.log(review);
 
   // const navigate = useNavigate();
 

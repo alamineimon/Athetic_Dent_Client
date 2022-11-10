@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Contexts/AuthPovider/AuthProvider';
@@ -9,6 +9,10 @@ const TakeReview = () => {
     // const { user } = useContext(AuthProvider)
     const {user} = useContext(AuthContext)
   const { name, _id, seller, price, ratings, describe, img } = useLoaderData();
+
+  useEffect(() => {
+    document.title='Add Review'
+  })
 
     const handleGiveReview =event =>{
     event.preventDefault();
@@ -70,7 +74,7 @@ const TakeReview = () => {
         </div>
 
         <div className="w-1/2">
-          <h1 className="text-2xl text-center">Review Option</h1>
+          <h1 className="text-4xl text-semibold text-center">Add Review</h1>
           <div>
             <form
               onSubmit={handleGiveReview}
@@ -143,8 +147,8 @@ const TakeReview = () => {
                 </button>
               ) : (
                 <Link to="/login">
-                  <div className='mt-6'>
-                    <h1 className="btn  btn-info rounded text-white">
+                  <div className='mt-6 mx-auto'>
+                    <h1 className="btn   btn-info rounded text-white">
                       Please login before submit a review
                     </h1>
                   </div>
