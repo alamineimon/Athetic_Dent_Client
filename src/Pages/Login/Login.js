@@ -47,7 +47,7 @@ const Login = () => {
         console.log(user);
         if (loading) {
           return (
-            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-900"></div>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600"></div>
           );
         } else {
           setUser(user);
@@ -78,7 +78,7 @@ const Login = () => {
           setUser(user);
         }
         Swal.fire("Success");
-        process.form.reset();
+        form.reset();
         setError("");
       })
       .catch((error) => {

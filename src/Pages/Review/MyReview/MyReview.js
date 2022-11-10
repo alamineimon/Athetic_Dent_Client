@@ -6,13 +6,6 @@ import MyReviewRow from './MyRevieRow/MyReviewRow';
 const MyReview = (props) => {
   const { user } = useContext(AuthContext);
   const [review, setReview] = useState([]);
-  console.log(review);
-
-  // const navigate = useNavigate();
-
-  // const location = useLocation();
-
-  // const from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     document.title = 'My Review'
@@ -25,7 +18,7 @@ const MyReview = (props) => {
   }, [user?.email]);
 
   const handleDelete = (id) => {
-    const proced = window.confirm("Are You are sure?");
+    const proced = window.confirm("Are You sure?");
     if (proced) {
       fetch(`http://localhost:5000/allreview/${id}`, {
         method: "DELETE",
@@ -34,7 +27,7 @@ const MyReview = (props) => {
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            Swal.fire("Review deleted successfully");
+            Swal.fire("Successfully deleted");
             const remainning = review.filter((rew) => rew._id !== id);
             setReview(remainning);
           }
