@@ -8,7 +8,8 @@ const Services = (props) => {
   const [services, setServices] = useState([]);
   
 
-    useEffect(() => {
+  useEffect(() => {
+      document.title='Services'
       fetch("http://localhost:5000/services")
         .then((res) => res.json())
         .then((data) => {

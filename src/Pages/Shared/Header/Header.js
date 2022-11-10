@@ -1,8 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthPovider/AuthProvider';
 
 const Header = () => {
+  useEffect(() => {
+    document.title = ' Home'
+  })
 
 
   const { user, logOut, setUser } = useContext(AuthContext)

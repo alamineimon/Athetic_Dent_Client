@@ -1,9 +1,12 @@
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const AddService = (props) => {
+  useEffect(() => {
+    document.title='Add Service'
+  })
   const [users, setUsers] = useState({});
 
 

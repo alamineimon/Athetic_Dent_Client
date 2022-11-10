@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../Contexts/AuthPovider/AuthProvider";
 
@@ -6,6 +6,9 @@ import { AuthContext } from "../../Contexts/AuthPovider/AuthProvider";
 
 
 const Register = (props) => {
+  useEffect(() => {
+    document.title = 'Register'
+  })
 
     const { createUser,loading, setUser, updateUserProfile } =
     useContext(AuthContext);

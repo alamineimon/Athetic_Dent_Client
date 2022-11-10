@@ -1,11 +1,14 @@
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Contexts/AuthPovider/AuthProvider';
 
 
 const Login = () => {
+  useEffect(() => {
+    document.title= 'Login'
+  })
 
   const { signIn, auth, setUser } = useContext(AuthContext);
   const [error, setError] = useState();

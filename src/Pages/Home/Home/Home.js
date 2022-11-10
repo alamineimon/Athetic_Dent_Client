@@ -14,7 +14,8 @@ const Home = (props) => {
   const [services, setServices] = useState([]);
   
 
-    useEffect(() => {
+  useEffect(() => {
+      document.title = 'Athetic Dent'
       fetch("http://localhost:5000/")
         .then((res) => res.json())
         .then((data) => {

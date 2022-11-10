@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Blogs = (props) => {
+  useEffect(() => {
+    document.title= 'Blogs'
+  })
   return (
     <div className="">
       <section className=" ">

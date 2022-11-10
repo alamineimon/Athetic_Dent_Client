@@ -15,6 +15,7 @@ const MyReview = (props) => {
   // const from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
+    document.title = 'My Review'
     fetch(`http://localhost:5000/allreview?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
