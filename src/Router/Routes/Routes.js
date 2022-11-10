@@ -39,7 +39,9 @@ export const router = createBrowserRouter([
         path: "/services/:id",
         element: <TakeReview></TakeReview>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://incredible-trip-server.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/allreview",

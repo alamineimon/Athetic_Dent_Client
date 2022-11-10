@@ -24,13 +24,16 @@ const UpdateReview = (props) => {
     console.log(customername, mail, msg);
 
     setUser(msg);
-    fetch(`http://localhost:5000/allreview/${storedUser._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
+    fetch(
+      `https://incredible-trip-server.vercel.app/allreview/${storedUser._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

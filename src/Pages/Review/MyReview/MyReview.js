@@ -9,7 +9,9 @@ const MyReview = (props) => {
 
   useEffect(() => {
     document.title = 'My Review'
-    fetch(`http://localhost:5000/allreview?email=${user?.email}`)
+    fetch(
+      `https://incredible-trip-server.vercel.app/allreview?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setReview(data);
@@ -20,7 +22,7 @@ const MyReview = (props) => {
   const handleDelete = (id) => {
     const proced = window.confirm("Are You sure?");
     if (proced) {
-      fetch(`http://localhost:5000/allreview/${id}`, {
+      fetch(`https://incredible-trip-server.vercel.app/allreview/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

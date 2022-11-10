@@ -14,7 +14,7 @@ const AddService = (props) => {
       event.preventDefault();
       console.log(users);
 
-      fetch("http://localhost:5000/addServices", {
+      fetch("https://incredible-trip-server.vercel.app/addServices", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -15,7 +15,7 @@ const Disscount = () => {
               <span>Plus free shipping! Use code:</span>
               <span className="font-bold text-lg">ATHeTIC</span>
             </div>
-            <Link to='register'>
+            <Link to="/register">
               <button className="dark:bg-gray-50 dark:text-gray-900 dark:border-gray-400">
                 Enrol Now
               </button>

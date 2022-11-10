@@ -32,16 +32,16 @@ const TakeReview = () => {
         photoURL
         };
 
-        fetch("http://localhost:5000/review", {
+        fetch("https://incredible-trip-server.vercel.app/review", {
           method: "POST",
           headers: {
             "content-type": "application/json",
           },
           body: JSON.stringify(review),
         })
-        .then((res) => res.json())
+          .then((res) => res.json())
           .then((data) => {
-            console.log(data)
+            console.log(data);
             if (data.acknowledged) {
               Swal.fire("Successfully added your  review");
               form.reset();
@@ -49,7 +49,6 @@ const TakeReview = () => {
           })
           .catch((err) => {
             console.error(err);
-
           });
   }
 

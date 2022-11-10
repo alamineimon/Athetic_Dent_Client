@@ -15,7 +15,7 @@ const Home = (props) => {
 
   useEffect(() => {
       document.title = 'Athetic Dent'
-      fetch("http://localhost:5000/")
+      fetch("https://incredible-trip-server.vercel.app/")
         .then((res) => res.json())
         .then((data) => {
           if (loading) {

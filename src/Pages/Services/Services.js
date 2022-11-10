@@ -10,7 +10,7 @@ const Services = (props) => {
 
   useEffect(() => {
       document.title='Services'
-      fetch("http://localhost:5000/services")
+      fetch(`https://incredible-trip-server.vercel.app/services`)
         .then((res) => res.json())
         .then((data) => {
           if (loading) {
