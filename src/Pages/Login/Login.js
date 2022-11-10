@@ -64,7 +64,7 @@ const Login = () => {
         console.log(user);
         setUser(user);
         Swal.fire("Success");
-        form.reset();
+        process.form.reset();
         setError("");
         navigate(from, { replace: true });
       })

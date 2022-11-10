@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddService = (props) => {
 
-    const [user, setUser] = useState({});
+const AddService = (props) => {
+  const [users, setUsers] = useState({});
+
 
     const handleSubmmitReview = (event) => {
       event.preventDefault();
-      console.log(user);
+      console.log(users);
 
       fetch("http://localhost:5000/addServices", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(user),
+        body: JSON.stringify(users),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -29,9 +31,9 @@ const AddService = (props) => {
     const handleOnBlur = (event) => {
       const field = event.target.name;
       const value = event.target.value;
-      const newUser = { ...user };
+      const newUser = { ...users };
       newUser[field] = value;
-      setUser(newUser);
+      setUsers(newUser);
     };
 
 
@@ -118,7 +120,8 @@ const AddService = (props) => {
                     name="seller"
                     id="seller"
                     required
-                    placeholder="seller"
+                    value={"AtheticDent"}
+                    readOnly
                     className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
                   />
                 </div>
@@ -127,11 +130,11 @@ const AddService = (props) => {
                     Img
                   </label>
                   <input
+                    required
                     onBlur={handleOnBlur}
                     type="img"
                     name="img"
                     id="img"
-                    required
                     placeholder="img-url"
                     className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
                   />

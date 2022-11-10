@@ -6,7 +6,7 @@ const MyReviewRow = ({ rev, handleDelete }) => {
   console.log(rev);
   return (
     <div>
-      <div className="container flex mt-6 flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-blue-900 dark:text-gray-100">
+      <div className="container flex mt-6 flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 rounded-xl dark:bg-gray-500 text-white">
         <div className="flex justify-between p-4">
           <div className="flex space-x-4">
             <div>
@@ -48,7 +48,7 @@ const MyReviewRow = ({ rev, handleDelete }) => {
             </Link>
           </div>
         </div>
-        <div className="p-4 space-y-2 text-sm dark:text-gray-400">
+        <div className="p-4 space-y-2 text-sm text-white">
           <p>{message}</p>
         </div>
       </div>

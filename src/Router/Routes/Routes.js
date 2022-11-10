@@ -11,6 +11,7 @@ import UpdateReview from "../../Pages/Review/MyReview/UpdateReview/UpdateReview"
 import AddService from "../../Pages/Services/AddService";
 import Services from "../../Pages/Services/Services";
 import TakeReview from "../../Pages/TakeReview/TakeReview";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +47,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myreview",
-        element: <MyReview></MyReview>,
+        element: (
+          <PrivateRoute>
+            <MyReview></MyReview>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/updatereview",
@@ -54,7 +59,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addservice",
-        element: <AddService></AddService>
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/blogs",
