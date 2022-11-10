@@ -50,8 +50,8 @@ const AddService = (props) => {
             className="space-y-6 ng-untouched ng-pristine ng-valid"
           >
             {/* name price ratings describe  seller img */}
-            <div className="flex">
-              <div className="mr-12  w-1/2">
+            <div className="lg:flex sm:w-full sm:block">
+              <div className="lg:mr-12 sm:w-full   lg:w-1/2">
                 <div className="space-y-1 text-sm">
                   <label for="name" className="block text-white">
                     Name
@@ -95,7 +95,7 @@ const AddService = (props) => {
                   />
                 </div>
               </div>
-              <div className=" w-1/2">
+              <div className=" lg:mr-12 sm:w-full   lg:w-1/2">
                 <div className="space-y-1 text-sm">
                   <label for="describe" className="block text-white">
                     Describe

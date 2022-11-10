@@ -88,7 +88,7 @@ const Register = (props) => {
                   name="email"
                   id="email"
                   required
-                  placeholder="Username"
+                  placeholder="Email"
                   className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"
                 />
               </div>

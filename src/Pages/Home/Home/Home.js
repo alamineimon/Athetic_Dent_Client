@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthPovider/AuthProvider";
+import Extra from "../../Extra/Extra";
 import Services from '../../Services/Services';
 import SingleService from "../../Services/SingleService";
 import Banner from '../Banner/Banner';
 
+
 const Home = (props) => {
+
+
     const { loading, setUser } = useContext(AuthContext);
   const [services, setServices] = useState([]);
   
@@ -38,6 +42,7 @@ const Home = (props) => {
             </Link>
           </div>
         </div>
+        <Extra></Extra>
       </div>
     );
 }

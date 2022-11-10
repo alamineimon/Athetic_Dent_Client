@@ -15,7 +15,7 @@ const Header = () => {
   };
 
     return (
-      <div className="navbar bg-white px-8  text-black">
+      <div className="navbar bg-white lg:px-8 sm:px-0  text-black">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,9 +54,11 @@ const Header = () => {
               <img
                 src="https://st2.depositphotos.com/1768926/9860/v/600/depositphotos_98600482-stock-illustration-dental-care-logo.jpg"
                 alt=""
-                className="h-20"
+                className="lg:h-20 sm:d-hidden"
               />
-              <p className="text-4xl mt-4 font-semibold">Athetic Dent</p>
+              <p className="lg:text-4xl sm:font-xl mt-4 font-semibold">
+                Athetic Dent
+              </p>
             </div>
           </Link>
         </div>
@@ -78,7 +80,7 @@ const Header = () => {
                   <Link to="/myreview">My review</Link>
                 </li>
                 <li>
-                  <Link to='/addservice'>Add Service</Link>
+                  <Link to="/addservice">Add Service</Link>
                 </li>
               </>
             ) : (
